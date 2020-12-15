@@ -3,3 +3,15 @@
 # pip install django
 # python manage.py runserver
 # python manage.py startapp azurecloudapp
+### Edit the view file as below
+from django.http import HttpResponse
+# Create a function -
+def home(request):
+    return HttpResponse('<h1>Hello Rahul"</h>')
+##### create a new file name as urls.py in app folder and then add following line-
+ from . import views
+ # dynamic Need to change setting for templates dir 'DIRS': [BASE_DIR, 'templates'],
+ ### call dynamic in html {{name}}
+ # change in view is also need to done - 
+ def home(request):
+    return render(request, 'home.html', {'name':'Rishav'})
